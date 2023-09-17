@@ -37,11 +37,9 @@ const Home = () => {
   }, [startDate, endDate, covidData, fetchCovidCountries]);
 
   const disabledDate = (current) => {
-    // Define the range of disabled dates
     const startDate = moment("2020-02-06", "YYYY-MM-DD");
     const endDate = moment("2023-09-13", "YYYY-MM-DD");
 
-    // Check if the current date is before the start date or after the end date
     return current.isBefore(startDate) || current.isAfter(endDate);
   };
 

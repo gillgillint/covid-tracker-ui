@@ -8,10 +8,8 @@ import colorData from '../../assets/data/colorCountries'
 Chart.register(CategoryScale, LinearScale, BarElement,ChartDataLabels);
 
 const RaceBarChart = ({ data }) => {
-  console.log(data, "chart");
   const chartData = {
     labels: data.map((item) => item?.name),
-
     datasets: [
       {
         label: "Race Progress",
@@ -28,18 +26,18 @@ const RaceBarChart = ({ data }) => {
     scales: {
       x: {
         beginAtZero: true,
-        max: Math.max(...data.map((item) => item.cases)) + 100000, // Adjust the maximum value as needed
+        max: Math.max(...data.map((item) => item.cases)) + 100000, 
       },
     },
     plugins: {
       datalabels: {
         display: true,
-        color: "black", // Customize the font color
+        color: "black", 
         font: {
-          size: 15, // Customize the font size
+          size: 15, 
         },
-        anchor: "end", // Customize the label position (start, center, end, or auto)
-        align: "start", // Customize the label alignment (start, center, end, or auto)
+        anchor: "end", 
+        align: "start", 
         formatter: (value) => `${value} (cases)`
       },
     },
